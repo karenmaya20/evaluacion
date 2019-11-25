@@ -1,0 +1,556 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #666666;
+    line-height: 2.3em;
+    font-size: 1.2em;
+    margin:2em;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+.bien {
+	border-color:#00A500;
+}
+
+.mal{
+	border-color:#A50000;
+}
+select.vacio{
+    border-color: #0069d9;
+}
+.lista-preguntas{
+   /* display: list-item;*/
+   height: auto;
+   width: auto;
+   
+    
+}
+.content_todo { 
+	float: left;
+	position: relative;
+    width: 70%; /*aqui ajusto el recuadro que contiene la imagen, asi no se pierden las coordenadas*/
+    
+}
+
+/*Es la imagen de fondo .png*/
+.perf{
+    margin-right: 5px;
+}
+
+.info{
+    background-color: #0069d9;
+    float: right;
+    padding: 18px 23px;
+    font-size: 1.3em;
+}
+
+.estilosinstruccion{
+    background-color: #0069d9;
+    color: #fff;
+    width: 100%;
+    padding: 5px 10px;
+    margin-top: 3px;
+
+}
+
+.mostrarinfo{
+    display: inline-block;
+}
+
+.tamico{
+    color: #fff;
+    font-size: 23px;
+}
+
+img.img_fondo { 
+	border: 1px dotted #E97500;
+	float: left;
+	position: relative;
+    z-index: 0;
+
+    max-width: 100%;
+    width: 100%; /* ajusto tamaño de imagen, pero no lo recomiendo mejor ajustar el marco en .content_todo*/
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+    border-radius: 10px;
+    
+    
+}
+i.ip {
+    font-size:26px;
+    margin-left: 5px;
+    color:green;
+}
+i.it {
+    font-size:26px;
+    margin-left: 5px;
+    color:red;
+}
+/* SECCION CASILLAS DROP, AQUI AJUSTAMOS COORDENADAS */
+span#cas0 { /* Para acomodar cada casilla drop, ESTA ES LA 1 y asi incrementalmente*/ 
+    top: 65%; /*183*/
+    left: 78%;
+    width: 20%;
+    height: 4%;
+  /*  background-color: yellow; */
+}
+span#cas1 {
+    top: 71%; 
+    left: 59%; 
+    width: 17%;
+    height: 4%;
+  /*  background-color: yellow; */
+}
+span#cas2 {
+    top: 24%;
+    left: 33%;
+    width: 17%;
+    height: 4%;
+
+}
+span#cas3 {
+    top: 44.5%;
+    left: 13%;
+    width: 17%;
+    height: 4%;
+  /*  background-color: yellow; */
+}
+
+
+/* FIN SECCION CASILLAS DROP, AQUI AJUSTAMOS COORDENADAS */
+
+/* las respuestas, sustituyendo los espacios por guion, se pueden poner como clases para configurar la casilla*/
+/*.dafne-de-jacopo-peri {
+    font-style: italic;
+}*/
+
+.mostrar { /*Estas clases son para activar la capacidad de manejar segmentos de visibilidad*/
+	display:initial; /* o ponemos ""? */
+}
+
+.ocultar {
+	display: none;
+}
+
+.botongeneral{
+    background-color:  #0069d9;
+}
+
+.botongeneral:hover{
+    background-color:  #0062cc;
+}
+.reactivos.center{
+	float: none;
+	margin: auto;
+}
+
+/* formato draggables de pregunta..., MEJOR SE APLICA EN .CLONADO*/
+/*.reactivos .lista-preguntas .sub-item .droppable .draggable { 
+    display: inline-block;
+    border: 1px solid;
+    height: 30px; 
+    width: 300px;
+    max-height: 300px;
+    min-width: 150px;
+    min-height: 30px; 
+}/*
+
+/*.respuestas .lista-respuestas .sub-item .draggable {*/
+    .respuestas .lista-respuestas .sub-item .draggable { /*RAAR Ago 14,18: draggables area respuestas*/
+        
+    min-width: 150px;
+    min-height: 30px;
+/*  width: 500px;*/
+  height: 30px;  
+    padding: 5px;
+	max-width: 100%; /* Esto funciona bien en zona de respuestas..*/
+border: 1px solid;
+	cursor:move;
+	background-color: #ffffff;
+   /* min-width: 100%;*/	/* Este y el display block para que esten alineadas las casillas de respuesta */
+	 display: block; /*block*/
+}
+
+
+.reactivos .lista-preguntas, .respuestas .lista-respuestas{
+    line-height: 1.5em;
+    background-color:#EAEAEA;
+    background: transparent;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    padding: 10px;
+}
+.sub-item > p {
+    display: inline;
+    margin-right: 6px;
+}
+
+.reactivos .lista-preguntas .sub-item, .respuestas .lista-respuestas .sub-item{
+	padding: 5px;
+	margin: 15px;
+/* display:marker;*/
+
+
+}
+
+/*span.droppable {
+	float: left;
+	position: absolute;
+	z-index: 2;
+}*/
+
+.reactivos .lista-preguntas .sub-item .droppable{
+    /* Esto es muy importante para que flote...*/
+	float: left;
+	position: absolute; 
+    z-index: 2;    
+    /* para que flote*/
+
+  /*  height:auto;*/
+    background-color: white; /*Esto varia a necesidad*/
+/*	position: relative;*/
+
+    content: ""; 
+    display: inline-block;
+  /*  margin: 5px;*/
+ /*   min-width: 150px;
+    min-height: 20px;*/
+ /*   padding: 1%;*/
+    text-align: center;
+    border: 1px solid #AAAAAA;
+    border-radius: 4px;
+}
+/* RAAR Nov 15,18: Asi estaba antes de hacerlo responsivo, conflicto imagen-texto?
+.reactivos .lista-preguntas .sub-item .droppable{
+     
+	float: left;
+	position: absolute; 
+    z-index: 2;    
+       
+
+    height:auto;
+    background-color: white; 
+
+
+    content: ""; 
+    display: inline-block;
+    margin: 5px;
+
+    text-align: center;
+    border: 1px solid #AAAAAA;
+    border-radius: 4px;
+}*/
+
+
+.reactivos .lista-preguntas .sub-item .droppable.ocupado{
+    top: 0;
+
+}
+
+.reactivos .lista-preguntas .sub-item .droppable.ocupado.correcto{
+	top: 0;
+  /*  border:1px solid #0C0; no se ve, queda atras*/
+    color:#030;
+    background-color: rgb(144, 241, 144);
+}
+
+.reactivos .lista-preguntas .sub-item .droppable.ocupado.incorrecto{
+	top: 0;
+ /*   border:1px solid #C00; no se ve, queda atras*/
+    color:#300;
+    background-color: rgb(201, 144, 144);
+}
+
+.reactivos .lista-preguntas .sub-item .droppable.dragOver{
+	border-color: #AAAAAA;
+	background-color: #AAAAAA;
+}
+
+.reactivos .lista-preguntas .sub-item .droppable.ocupado.dragOver{
+	border-color: #aaaaaa;
+	background-color:transparent;
+}
+
+.toolsti{
+width: 10%;
+
+}
+
+.reactivos .lista-preguntas .sub-item .droppable.ocupado.correcto.dragOver{
+    border:1px solid #0C0;
+    color:#030;
+}
+
+.reactivos .lista-preguntas .sub-item .droppable .clonado{
+  
+    height:100%;
+    background-color: transparent;
+  
+   /* background:transparent;*/
+   font-weight: bold;   
+   /*-font-size: 80%;*/
+   
+   /*Esto es importante va a variar segun si es imagen o texto*/
+   /*overflow: hidden;*/
+   line-height: 140%; /*centro verticalmente*/
+   display: inline-block;   
+   /*padding: 1px;*/
+   /*webkit­shape­inside: rectangle(0,0,100%,100%,5px,5px);*/
+   /*margin: 0px; /*solo esto tenia en origen*/
+ /*   background-color: yellow; *//*para debug*/
+	    
+}
+/*RAAR Nov 15,18: Asi estaba antes de hacerlo responsivo, conflicto imagen-texto?
+.reactivos .lista-preguntas .sub-item .droppable .clonado{
+    
+    width:100%;    
+    height:100%;
+    background-color: transparent;
+    
+   
+   font-weight: bold;   
+   font-size:80%; 
+   line-height: 80%;
+   display: inline-block;   
+
+   margin: 0px; 
+   
+}*/
+
+/* Para que? no se coloca class=correcto al object....
+.reactivos .lista-preguntas .sub-item .droppable .clonado.correcto{
+
+    color:#600;
+    background-color: transparent;
+}
+
+.reactivos .lista-preguntas .sub-item .droppable .clonado.incorrecto{
+
+    color:#600;
+    background-color: transparent;
+}*/
+
+.respuestas{
+	text-align:center;
+}
+
+.respuestas.col-md-3{ /*RAAR elegante jun 20,18  Para que quede centrado a la derecha cuando respuestas este como columna... jun 28 lo inhabilito, da lata no pone las respuestas abajo, hay que revisar...es buena idea...*/
+  /*  margin: 0; /* de aqui al transform es para centrar horizontalmente,RAAR elegante jun 20,18  elegante */
+ /*   position: fixed;
+    top: 50%;
+    right: 50%;*/
+ /*	 height: 100%; RAAR elegante jun 20,18 lo apago mientas por que si son pocos se amontonan arriba*/
+/*	 transform: translate(200%, -50%);	*/
+}
+
+.respuestas.center{
+	float: none;
+/*	margin: auto;*/
+	
+}
+
+.respuestas.center .lista-respuestas .sub-item{
+	display: inline-block;
+	width:200px;
+	vertical-align:middle;
+}
+.ejercicio:after{
+	clear: both;
+	content: "";
+	display: block;
+}
+
+.revisa {
+    width: 300px;
+    margin: auto;
+}
+
+.revisa button{
+	display: block;
+	width: 150px;
+	margin: 10px auto;
+}
+.revisa:before{
+	content: "";
+	display: block;
+	clear: both;
+}
+.retroalimentacion{
+	text-align:center
+}
+.barraInferior{
+    text-align: center;
+    clear: both;
+}
+.retroBien{
+    color: rgb(0, 131, 0);
+    background-color: rgba(0, 255, 0, 0.1);
+    border: 1px solid rgb(0, 165, 0);
+    padding: 6px;
+    border-radius: 3px;
+    line-height:30px;
+    
+}
+
+.retroMal{
+    color: rgb(131, 0, 0);
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgb(165, 0, 0);
+    padding: 6px;
+    border-radius: 3px;
+/*	margin: 0 2px;*/
+    line-height:30px;
+    
+}
+
+.retroArroba{ /*Para acomodar la retro continua y despues de la imagen*/
+ /*   color: rgb(131, 0, 0);
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgb(165, 0, 0);
+    padding: 6px;
+    border-radius: 3px;
+	margin: 0 2px;
+    line-height:30px;*/
+   /* min-width: auto;*/
+   /* clear: both;    */
+    
+}
+.mostrarRetro{
+    /*display:inline-block;*/
+    display:block;
+    
+}
+
+.ocultarRetro{
+    display:none;
+}
+
+.headings { /*nm*/
+	font-family: 'Open Sans', sans-serif;
+    color: #b1b1b1;
+    letter-spacing: 1px;
+    font-size: 1em;
+    margin: 0;
+}
+.actividad {
+    max-width: 250px;
+    background: #b1b1b1;
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+    color: #fff!important;
+    margin-bottom: 15px !important;
+}
+.headings-int {
+    font-family: 'Open Sans', sans-serif;
+    color: #6c6b82;
+    letter-spacing: 1px;
+    font-size: 2em;
+    margin-top: 0;
+}
+.under-li {
+    border-bottom: solid #dbdbdb;
+    border-width: 3px;
+    padding-bottom: 9px;
+    width: 80%;
+}
+.avisaFaltante {
+    background-color:  #0069d9 !important;
+    opacity: 0.8;
+}
+
+.preguntas{
+    flex-direction: row;
+margin-left: -10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.palomita{
+position: absolute;
+ width: 100%;
+ height: 100%;
+ z-index: 100000;
+ left: 0;
+ background: #0C0;
+ opacity: 0.5;
+  
+}
+.tache{
+    position: absolute;
+ width: 100%;
+ height: 100%;
+ z-index: 100000;
+ left: 0;
+ opacity: 0.5;
+ background: rgb(246, 79, 50);
+}
+.blink {
+    animation: blink 2s linear infinite;
+    -webkit-animation: blink 2s linear infinite;
+  }
+  @keyframes blink {
+    50% { opacity: 0.0; }
+  }
+  @-webkit-keyframes blink {
+    50% { opacity: 0.0; }
+  }
+
+.icono{
+  font-size: 6em;
+  float: right;
+  color: #b1b1b1;
+}
+
+
+.tooltip.primary .tooltip-inner          { background-color:    #337ab7; }
+.tooltip.primary.top > .tooltip-arrow    { border-top-color:    #337ab7; }
+.tooltip.primary.right > .tooltip-arrow  { border-right-color:  #337ab7; }
+.tooltip.primary.bottom > .tooltip-arrow { border-bottom-color: #337ab7; }
+.tooltip.primary.left > .tooltip-arrow   { border-left-color:   #337ab7; }
+
+.tooltip.info .tooltip-inner          { background-color:    #31b0d5; }
+.tooltip.info.top > .tooltip-arrow    { border-top-color:    #31b0d5; }
+.tooltip.info.right > .tooltip-arrow  { border-right-color:  #31b0d5; }
+.tooltip.info.bottom > .tooltip-arrow { border-bottom-color: #31b0d5; }
+.tooltip.info.left > .tooltip-arrow   { border-left-color:   #31b0d5; }
+
+.tooltip.success .tooltip-inner          { background-color:    #449d44; width: 150px }
+.tooltip.success.top > .tooltip-arrow    { border-top-color:    #449d44; }
+.tooltip.success.right > .tooltip-arrow  { border-right-color:  #449d44; }
+.tooltip.success.bottom > .tooltip-arrow { border-bottom-color: #449d44; }
+.tooltip.success.left > .tooltip-arrow   { border-left-color:   #449d44; }
+
+.tooltip.warning .tooltip-inner          { background-color:    #ec971f; }
+.tooltip.warning.top > .tooltip-arrow    { border-top-color:    #ec971f; }
+.tooltip.warning.right > .tooltip-arrow  { border-right-color:  #ec971f; }
+.tooltip.warning.bottom > .tooltip-arrow { border-bottom-color: #ec971f; }
+.tooltip.warning.left > .tooltip-arrow   { border-left-color:   #ec971f; }
+
+.tooltip.danger .tooltip-inner          { background-color:    #d9534f; width: 150px;}
+.tooltip.danger.top > .tooltip-arrow    { border-top-color:    #d9534f; }
+.tooltip.danger.right > .tooltip-arrow  { border-right-color:  #d9534f; }
+.tooltip.danger.bottom > .tooltip-arrow { border-bottom-color: #d9534f; }
+.tooltip.danger.left > .tooltip-arrow   { border-left-color:   #d9534f; }
+
+
+@media (min-width:900px){
+  .icono {
+    display: none;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+	body{
+		font-family: Gotham,"Helvetica Neue",Helvetica,Arial,sans-serif;	
+		color: #777;
+	
+	}
+	.respuestas .lista-respuestas .sub-item .draggable {
+		max-width: 200px;
+	}
+}
+
