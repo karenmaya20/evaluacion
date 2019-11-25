@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+
+    <title>Ordenar V2.7</title>
+<!--
+    *v2.7: JLBG, Oct 10, 19: se agrega versión 2.3 de conectividadSCORM y se cambia la carga de dichas librerías
+    *v2.6: JLBG, Oct 01, 19: Ajuste de tooltips, incluyo paginado en todas las vistas
+    *v2.5: JLBG, Ago 02, 19: Quitar flechas de recuadros, cambiar márgenes, agregar respuesta correcta al final del último intento para los reactivos erróneos
+    *v2.4: JLBG, RAAR Nov 12,18: "Se agrega ponerNumeral", "ponerNumeroPreguntas" para controlar el despliegue de numeración de pregutas
+   	*v2.3: RAAR Ago 20,18: deshabilito la restricción de no checar si no se ha movido cada frase y cambio http por https
+	*v2.2: RAAR Jun 28,18: agrego bandera debug, agrego while para evitar que un enunciado quede como la respuesta correcta, establezco maxIntentos como la variable que controla los intentos...
+	*v2.1: Desarrollado en CUAED, mantenido por jBecerril, Calosh, etc.
+-->		
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Ordenar"  />
+    <meta name="keywords" content="UNAM, CUAED"  />
+    <meta name="author" content="UNAM CUAED" />
+    <meta name="news_keywords" content="UNAM, CUAED" />
+    <meta name="generator" content="UNAM CUAED" />
+    <meta property="og:site_name" content="Ordenar" />
+    <meta itemprop="name" content="UNAM, CUAED" />
+    <meta itemprop="image" content="" />
+    <meta itemprop="description" content="Ordenar" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="activity" />
+    <meta property="og:description" content="Ordenar" />
+    <meta property="og:image" content="" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script> -->
+	<script src="https://lib.cuaed.unam.mx/R019/js/jquery-v3.2.1.js" ></script>
+    <script>
+		var jq321 = $.noConflict();var crm=0;
+	</script>
+    <!-- JQuery UI -->  <!-- Corrijo, RAAR Ago 20,18 http: a https: -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" />
+    <!-- Bootstrap -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" /> -->
+
+
+    <!-- JLBG libreria bootstrap 21 mzo 2019 -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Estilos generales de los recursos //-->
+    <link href="css/general.css" rel="stylesheet" />
+    
+    <!-- Estilos individuales de los recursos //-->
+
+	<script src="js/reactivos.js"></script>
+	<script src="js/listaReactivos.js"></script>
+	<script src="js/configRecurso.js"></script>
+
+    <!-- Librerias de los recursos //-->
+    <script src="js/general.js"></script>
+	<link rel="stylesheet" href="lib/view-bigimg.css">
+    <script src="lib/view-bigimg.js"></script>
+ 
+    <script src="js/ordenar.js"></script>
+    <!-- Librerias jquery//-->
+	<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" />
+    <!-- SCORM //-->
+    <script type="text/javascript" src="./SCORM/conectividadSCORM.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+	<link href="css/font.css" rel="stylesheet" />
+    <script src="js/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css" />
+
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+
+
+    <!-- JLBG libreria bootstrap 21 mzo 2019 -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+	<script src="https://lib.cuaed.unam.mx/R019/js/bootstrap-v3.3.7.min.js"></script>
+
+    <link href="css/estilos_ordenar.css" rel="stylesheet" />
+
+    <!-- Librerias responsivas para bugs en navegadores //-->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+		jq321(document).ready(function(){
+            jq321('[data-toggle="tooltip"]').each(function () {
+			var options = {
+				html: true };
+	
+			if (jq321(this)[0].hasAttribute('data-type')) {
+				options['template'] =
+				'<div class="tooltip ' + jq321(this).attr('data-type') + '" role="tooltip">' +
+				'	<div class="tooltip-arrow"></div>' +
+				'	<div class="tooltip-inner"></div>' +
+				'</div>';
+			}
+			jq321(this).tooltip(options);
+			});
+		});
+	</script>
+</head>
+<body>
+    <section class="container ordenar">
+        <!-- <div class="row"> -->
+			<div class="col-md-12">
+				<div class="info ocultar">				
+					<i class="fas fa-info fa-2x"></i>
+				</div>
+				<h2 class="headings-int">Título de la evaluación</h2>
+				<span id="toolTipInstrucciones" class="ocultar" data-toggle="tooltip" data-placement="auto left" data-type="info" title="instrucciones">
+					<i class="fa fa-info-circle fa-3x icono_info blink"></i>
+				</span>
+				<div id="textoInstrucciones">
+					<p id="instr">Instrucciones (pedagógica y técnica) de la evaluación</p>
+				</div>
+            </div>
+            <br/>
+			<div id="ordenar" class="col-md-12">
+			</div>
+        <!-- </div> -->
+        <div class="row">
+            <!-- <div class="pager col-md-12">
+                <i class="ir-arriba fas fa-chevron-up fa-2x"></i>
+                <div class="barraInferior">
+                    <div class="retroFinal"></div>
+					<button id="btnRevisar" class="btn btn-primary">Revisar</button>
+					<button id="btnReiniciar" class="btn btn-primary">Próximo intento</button>
+                </div>
+            </div> -->
+            <i class="ir-arriba fas fa-chevron-up fa-2x"></i>
+            <div class="pager col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="barraInferior">
+                    <div class="retroFinal"></div>
+                    <button id="btnPrevio"  class="btn btn-primary invisible cPrevio cPaginador" onClick="paginar('cPrevio')"><i class="fas fa-chevron-left"></i></button>	
+                    <button id="btnPaginador" class="btn ocultar"></button> <!--  para poner paginado -->
+                    <button id="btnProximo" class="btn btn-primary invisible cProximo cPaginador" onClick="paginar('cProximo')"><i class="fas fa-chevron-right"></i></button><br><br>
+                    <button id="btnRevisar" class="btn btn-primary">Revisar</button>
+                    <button id="btnReiniciar" class="btn btn-primary">Próximo intento</button>
+                </div>
+            </div>
+        </div>
+    </section>    
+</body>
+</html>
