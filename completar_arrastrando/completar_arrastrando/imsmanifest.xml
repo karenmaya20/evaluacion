@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This is a Reload version 2.5.5 SCORM 1.2 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="MANIFEST-C7C54340050365FAA24E162E3C50BE03" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <imsmd:lom>
+      <imsmd:general>
+        <imsmd:language>es</imsmd:language>
+        <imsmd:structure>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">Atomic</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:structure>
+        <imsmd:aggregationlevel>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">1</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:aggregationlevel>
+      </imsmd:general>
+      <imsmd:lifecycle>
+        <imsmd:version>
+          <imsmd:langstring xml:lang="en">1</imsmd:langstring>
+        </imsmd:version>
+        <imsmd:status>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">Final</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:status>
+      </imsmd:lifecycle>
+    </imsmd:lom>
+  </metadata>
+  <organizations default="ORG-2E73C7E1C93D790EFDFD9C0B49569AC5">
+    <organization identifier="ORG-2E73C7E1C93D790EFDFD9C0B49569AC5" structure="hierarchical">
+      <title>completar_arrastrando</title>
+      <item identifier="ITEM-D8ED31CB0E183D1FF9A6CD23247E6A8A" isvisible="true" identifierref="RES-F24DE4FA146491712B0D289AA0741694">
+        <title>Completar Arrastrando V4.9</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-F24DE4FA146491712B0D289AA0741694" type="webcontent" href="index.html" adlcp:scormtype="sco">
+      <file href="index.html" />
+      <file href="css/estilos.css" />
+      <file href="css/font.css" />
+      <file href="favicon.ico" />
+      <file href="js/completaArrastrando.js" />
+      <file href="js/configRecurso.js" />
+      <file href="js/jquery.ui.touch-punch.min.js" />
+      <file href="js/jqueryui-v1.10.4.min.js" />
+      <file href="js/listaReactivos.js" />
+      <file href="js/reactivos.js" />
+      <file href="SCORM/conectividadSCORM.js" />
+    </resource>
+  </resources>
+</manifest>
+
