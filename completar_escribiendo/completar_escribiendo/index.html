@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <!-- 
+        2.2 JLBG Sep 13, 2019: se agregó paginación paramétrica
+    -->
+	<title>Completar Escribiendo V2.2</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Completar Escribiendo V2.2"  />
+    <meta name="keywords" content="UNAM, CUAED"  />
+    <meta name="author" content="UNAM CUAED" />
+    <meta name="news_keywords" content="UNAM, CUAED" />
+    <meta name="generator" content="UNAM CUAED" />
+    <meta property="og:site_name" content="Completar Escribiendo V2.2" />
+    <meta itemprop="name" content="UNAM, CUAED" />
+    <meta itemprop="image" content="" />
+    <meta itemprop="description" content="Completar Escribiendo V2.2" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="activity" />
+    <meta property="og:description" content="Completar Escribiendo V2.2" />
+    <meta property="og:image" content="" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script> -->
+    <script src=" https://lib.cuaed.unam.mx/R019/js/jquery-v3.2.1.js"></script>
+    <script>
+		var jq321 = jQuery.noConflict();var crm=40;
+	</script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src=" https://lib.cuaed.unam.mx/R019/js/bootstrap-v3.3.7.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="css/general.css" /> -->
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
+    <!-- <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script> -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" />
+ 	<script src="js/reactivos.js"></script>
+	<script src="js/listaReactivos.js"></script>
+	<script src="js/configRecurso.js"></script>
+    
+    <!-- Estilos individuales de los recursos //-->
+ 
+    <!-- Librerias jquery//-->
+    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script> -->
+    <!-- SCORM // -->
+    <script type="text/javascript" src="SCORM/conectividadSCORM.js"></script>
+    <!-- Librerias de los recursos //-->
+    <script src="js/general.js"></script> 
+
+    <script src="js/completarEscribiendo.js"></script>
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+	<!-- <link href="css/font.css" rel="stylesheet" /> -->
+    <script src="js/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css" /> 
+
+    <!-- Librerias responsivas para bugs en navegadores //-->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+		jq321(document).ready(function(){
+			jq321('[data-toggle="tooltip"]').each(function () {
+			var options = {
+				html: true };
+	
+			if (jq321(this)[0].hasAttribute('data-type')) {
+				options['template'] =
+				'<div class="tooltip ' + jq321(this).attr('data-type') + '" role="tooltip">' +
+				'	<div class="tooltip-arrow"></div>' +
+				'	<div class="tooltip-inner"></div>' +
+				'</div>';
+			}
+			jq321(this).tooltip(options);
+			});
+		});
+	</script>
+
+</head>
+<body>
+    <noscript>Necesitas tener habilitado Javascript para poder continuar</noscript>
+    <section class="container escribiendo"> 
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+				<!-- <i class="icon-horizontal-icon icono"></i> -->
+				<div class="info ocultar">				
+					<i class="fas fa-info fa-2x"></i>
+				</div>
+				<h2 class="headings-int">Título de la evaluación</h2>
+				<span id="toolTipInstrucciones" class="ocultar" data-toggle="tooltip" data-placement="auto left" data-type="info" title="instrucciones">
+					<i class="fa fa-info-circle fa-3x icono_info blink"></i>
+				</span>
+				<div id="textoInstrucciones">
+					<p id="instr">Instrucciones (pedagógica y técnica) de la evaluación</p>
+				</div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div id="completable">
+                </div>
+            </div>
+            <i class="ir-arriba fas fa-chevron-up fa-2x"></i>
+            <div class="pager col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="barraInferior">
+                    <button id="btnPrevio"  class="btn btn-primary invisible cPrevio cPaginador" onClick=""><i class="fas fa-chevron-left"></i></button>	
+                    <button id="btnPaginador" class="btn ocultar"></button> <!--  para poner paginado -->
+                    <button id="btnProximo" class="btn btn-primary invisible cProximo cPaginador" onClick=""><i class="fas fa-chevron-right"></i></button><br>		
+                    <button id="btnRevisar" name="calificar" class="btn btn-primary">Revisar</button>
+                    <button id="btnReiniciar" name="resetear" class="btn btn-primary">Próximo intento</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
