@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This is a Reload version 2.5.5 SCORM 1.2 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="MANIFEST-F80157107132C28E459FC163570A1590" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <imsmd:lom>
+      <imsmd:general>
+        <imsmd:language>es</imsmd:language>
+        <imsmd:structure>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">Atomic</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:structure>
+        <imsmd:aggregationlevel>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">1</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:aggregationlevel>
+      </imsmd:general>
+      <imsmd:lifecycle>
+        <imsmd:version>
+          <imsmd:langstring xml:lang="en">1</imsmd:langstring>
+        </imsmd:version>
+        <imsmd:status>
+          <imsmd:source>
+            <imsmd:langstring xml:lang="en">LOMv1.0</imsmd:langstring>
+          </imsmd:source>
+          <imsmd:value>
+            <imsmd:langstring xml:lang="en">Final</imsmd:langstring>
+          </imsmd:value>
+        </imsmd:status>
+      </imsmd:lifecycle>
+    </imsmd:lom>
+  </metadata>
+  <organizations default="ORG-DF923A7058339BFA29D79BB849CFC5ED">
+    <organization identifier="ORG-DF923A7058339BFA29D79BB849CFC5ED" structure="hierarchical">
+      <title>Organization</title>
+      <item identifier="ITEM-F944D2EC64771A01FDBF098D26991AC4" isvisible="true" identifierref="RES-24F1D4BDADFE53A31CDB84D0DA5AB6DB">
+        <title>Verdadero-Falso V2.6</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-24F1D4BDADFE53A31CDB84D0DA5AB6DB" type="webcontent" href="index.html" adlcp:scormtype="sco">
+      <file href="index.html" />
+      <file href="css/font.css" />
+      <file href="css/ra05.css" />
+      <file href="favicon.ico" />
+      <file href="js/configRecurso.js" />
+      <file href="js/listaReactivos.js" />
+      <file href="js/reactivos.js" />
+      <file href="js/verdaderoFalso.js" />
+      <file href="SCORM/conectividadSCORM.js" />
+    </resource>
+  </resources>
+</manifest>
+

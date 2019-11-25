@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+	<title>Verdadero-Falso V3.1</title>
+	<!--
+		*v3.1: JLBG Oct 10,19: se agrega versión 2.3 de conectividadSCORM y se cambia la carga de dichas librerías
+		*v3.0: JLBG May 02,19: cambio en palomita y tache, de imagen a icono, cambio en modo de evaluación
+		*v2.9: JLBG Abr 08,19: se modificó la clase del encabezado de la tabla, para que quede fija en la parte superior de la pantalla al hacer scroll
+		*v2.8: JLBG Mar 25,19: cambio de nombre de archivo ra05.css a estilos.css; ajuste en mensajes en inglés
+		*v2.7: RAAR Ene 17,19: Agrego capacidad SCORM
+		*v2.6: RAAR Nov 21,18: Elimino los reversos en limpiaRadiosVF()
+		*v2.5: JLBG-RAAR Oct 07,18: Modifico reiniciar(); para que oculte retros y activo el habilitado/deshabilitado de los radio-boton
+		*v2.4: JLBG Sep 08,18: se modificó ra05.css para animación de los radiobuttons, y uso de parámetro invPregResp para colocar respuestas a la izq o der ....	
+		*v2.3: RAAR Jun 19,18: modifico boton reinicio y agrego funcion reinicio() blanqueando opciones....	
+		*v2.2: RAAR May 21,18: Elimino archivos ofuscados, corrijo falla en la retro final.
+	-->
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Verdadero falso"  />
+    <meta name="keywords" content="UNAM, CUAED"  />
+    <meta name="author" content="UNAM CUAED" />
+    <meta name="news_keywords" content="UNAM, CUAED" />
+    <meta name="generator" content="UNAM CUAED" />
+    <meta property="og:site_name" content="Verdadero falso" />
+    <meta itemprop="name" content="UNAM, CUAED" />
+    <meta itemprop="image" content="" />
+    <meta itemprop="description" content="Verdadero falso" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="activity" />
+    <meta property="og:description" content="Verdadero falso" />
+    <meta property="og:image" content="" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script> -->
+	<script src="https://lib.cuaed.unam.mx/R019/js/jquery-v3.2.1.js" ></script>
+    <script>
+		var jq321 = $.noConflict(); var crm = 0; // 0 para desplegar longitud de textos, es booleano...
+	</script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+	<script src="https://lib.cuaed.unam.mx/R019/js/bootstrap-v3.3.7.min.js"></script>
+
+	<link rel="stylesheet" href="css/estilos.css" />
+	<script src="js/reactivos.js"></script>
+	<script src="js/listaReactivos.js"></script>
+	<script src="js/configRecurso.js"></script>
+	<script src="js/verdaderoFalso.js"></script>
+    <!-- SCORM -->
+	<script type="text/javascript" src="./SCORM/conectividadSCORM.js"></script>
+    <!-- JQuery UI -->
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" /> -->
+    <!-- Estilos generales de los recursos //-->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="css/font.css" rel="stylesheet" />
+     <!-- <script type="text/javascript" src="js/jqueryui-v1.10.4.min.js"></script> -->
+   <script src="js/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/sweetalert.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+
+	<script>
+		jq321(document).ready(function(){
+			jq321('[data-toggle="tooltip"]').each(function () {
+			var options = {
+				html: true };
+	
+			if (jq321(this)[0].hasAttribute('data-type')) {
+				options['template'] =
+				'<div class="tooltip ' + jq321(this).attr('data-type') + '" role="tooltip">' +
+				'	<div class="tooltip-arrow"></div>' +
+				'	<div class="tooltip-inner"></div>' +
+				'</div>';
+			}
+			jq321(this).tooltip(options);
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<noscript>Necesitas tener habilitado Javascript para poder continuar</noscript>
+	<section class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+				<!-- <i class="icon-horizontal-icon icono"></i> -->
+				<div class="info ocultar">				
+					<i class="fas fa-info fa-2x"></i>
+				</div>
+				<h2 class="headings-int">Título de la evaluación</h2>				
+				<span id="toolTipInstrucciones" class="ocultar" data-toggle="tooltip" data-placement="auto left" data-type="info" title="instrucciones">
+					<i class="fa fa-info-circle fa-3x icono_info blink"></i>
+				</span>
+				<div id="textoInstrucciones">
+					<p id="instr">Instrucciones (pedagógica y técnica) de la evaluación</p>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" id="contenedor"></div>
+			<i class="ir-arriba fas fa-chevron-up fa-2x"></i>
+			<div class="pager col-md-12 col-lg-12 col-sm-12 col-xs-12">
+				<button id="btnPrevio"  class="btn btn-primary invisible cPrevio cPaginador" onClick="paginar('cPrevio')"><i class="fas fa-chevron-left"></i></button>	
+				<button id="btnPaginador" class="btn ocultar"></button> <!--  para poner paginado -->
+				<button id="btnProximo" class="btn btn-primary invisible cProximo cPaginador" onClick="paginar('cProximo')"><i class="fas fa-chevron-right"></i></button><br><br>
+				<button id="btnRevisar" class="btn btn-primary" onClick="revisarVF()">Revisar</button>
+				<button id="btnReiniciar" class="btn btn-primary" onClick="reiniciar()">Reiniciar</button>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
