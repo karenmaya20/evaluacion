@@ -1,0 +1,601 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #666666;
+    margin:2em;
+font-size: 1em;
+line-height: 1.8em;
+color: #000;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.fas{
+color: rgb(255, 255, 255);
+
+font-size: 10px;
+
+
+}
+.botonplpa{
+    margin-right: 4px;
+}
+
+
+.botonplpaaud{
+    margin-right: 4px;
+}
+
+
+.botonexp{
+font-size: 18px;
+}
+
+.controlitos{
+background-color: rgb(80, 80, 80);
+font-size: 10px;
+font-size: 6px;
+
+display: flex;
+
+padding: 7px;
+}
+
+.controlitosaud{
+    background-color: rgb(80, 80, 80);
+    font-size: 10px;
+    font-size: 6px;
+    
+    display: flex;
+    
+    padding: 7px;
+}
+
+
+.controlitos1{
+    background-color: rgb(80, 80, 80);
+    font-size: 10px;
+    font-size: 6px;
+    
+    display: flex;
+    
+    padding: 7px;
+    }
+
+.numeralsi{
+    font-size: 18px;
+    color: #fff;
+    padding: 7px;
+}
+
+.avisaFaltante {
+    border: 2px solid #0069d9 !important;
+}
+
+.mostrar { /*Estas clases son para activar la capacidad de manejar segmentos de visibilidad*/
+	display:initial; /* o ponemos ""? */
+}
+.info{
+    background-color: #0069d9;
+    float: right;
+    padding: 18px 23px;
+    font-size: 1.3em;
+}
+
+.estilosinstruccion{
+    background-color: #0069d9;
+    color: #fff;
+    width: 100%;
+    padding: 5px 10px;
+    margin-top: 3px;
+
+}
+
+.mostrarinfo{
+    display: inline-block;
+}
+
+.tamico{
+    font-size: 23px;
+}
+
+
+
+
+.cPaginador:hover{
+    background-color: #0062cc;
+    color: #fff;
+}
+
+.botongeneral{
+    background-color:  #0069d9;
+}
+
+.botongeneral:hover{
+    background-color:  #0062cc;
+}
+.ocultar {
+	display: none;
+}
+
+.reactivos.center{
+	float: none;
+	margin: auto;
+}
+
+.respuestas .lista-respuestas .sub-item .draggable {
+    height: 90%;
+	border: 1px solid;
+    width: 100%;
+	max-width: 100%;
+	cursor:move;
+	background-color: #ffffff;
+    min-width: 100%;	/* Este y el display block para que esten alineadas las casillas de respuesta */
+     display: block;
+
+}
+
+.reactivos .lista-preguntas, .respuestas .lista-respuestas{
+	line-height: 1.5em;
+	background-color:#EAEAEA;
+	background: white;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+
+}
+.sub-item > p {
+    display: inline;
+    margin-right: 6px;
+}
+.reactivos{
+    margin-left: -45px;
+}
+.respuestas{
+    margin-left: -45px;
+
+}
+.reactivos .lista-preguntas .sub-item, .respuestas .lista-respuestas .sub-item{
+
+	margin: 15px;
+/* display:marker;*/
+
+
+}
+
+.reactivos .lista-preguntas .sub-item .droppable{
+
+    
+
+	position: relative;
+	top: 13px;
+    content: "";
+    display: inline-block;
+    margin: 5px;
+
+    min-height: 40px;
+  
+    text-align: center;
+    border: 1px solid #AAAAAA;
+    border-radius: 4px;
+    width: 60px;
+}
+
+.reactivos .lista-preguntas .sub-item .droppable.ocupado{
+	top: 0;
+}
+
+.reactivos .lista-preguntas .sub-item .droppable.ocupado.correcto{
+	top: 0;
+    border:1px solid #0C0;
+    color:#030;
+   /* height: 100px;*/
+}
+
+.blink {
+    animation: blink 2s linear infinite;
+    -webkit-animation: blink 2s linear infinite;
+  }
+  @keyframes blink {
+    50% { opacity: 0.0; }
+  }
+  @-webkit-keyframes blink {
+    50% { opacity: 0.0; }
+  }
+
+i.ip {
+    font-size:36px;
+    color:green;
+}
+i.it {
+    font-size:36px;
+    color:red;
+}
+
+.reactivos .lista-preguntas .sub-item .droppable.ocupado.incorrecto{
+	top: 0;
+    border:1px solid #C00;
+    color:#300;
+  /*  height: 100px;*/
+}
+
+.reactivos .lista-preguntas .sub-item .droppable.dragOver{
+	border-color: #AAAAAA;
+	background-color: #AAAAAA;
+}
+
+.reactivos .lista-preguntas .sub-item .droppable.ocupado.dragOver{
+	border-color: #aaaaaa;
+	background-color:transparent;
+}
+
+.reactivos .lista-preguntas .sub-item .droppable.ocupado.correcto.dragOver{
+    border:1px solid #0C0;
+    color:#030;
+}
+
+input[type="range"] { 
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 17px;
+    width: 90%;
+    cursor: pointer;
+    border-radius: 0; /* iOS */
+}
+
+::-webkit-slider-runnable-track {
+    background: #ddd;
+}
+
+/*
+ * 1. Set to 0 width and remove border for a slider without a thumb
+ */
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 17px; /* 1 */
+    height: 40px;
+    background: #fff;
+    box-shadow: -100vw 0 0 100vw dodgerblue;
+    border: 2px solid #999; /* 1 */
+}
+
+::-moz-range-track {
+    height: 17px;
+    background: #ddd;
+}
+
+::-moz-range-thumb {
+    background: #fff;
+    height: 17px;
+    width: 10px;
+    border-radius: 0 !important;
+    box-shadow: -100vw 0 0 100vw dodgerblue;
+    box-sizing: border-box;
+}
+
+::-ms-fill-lower { 
+    background: dodgerblue;
+}
+
+::-ms-thumb { 
+    background: #fff;
+    border: 2px solid #999;
+    height: 17px;
+    width: 20px;
+    box-sizing: border-box;
+}
+
+::-ms-ticks-after { 
+    display: none; 
+}
+
+::-ms-ticks-before { 
+    display: none; 
+}
+
+::-ms-track { 
+    background: #ddd;
+    color: transparent;
+    height: 17px;
+    border: none;
+}
+
+::-ms-tooltip { 
+    display: none;
+}
+
+.reactivos .lista-preguntas .sub-item .droppable .clonado{
+    margin: 0px;
+  
+   width: 90%;
+    margin-bottom: -10px;
+}
+
+.reactivos .lista-preguntas .sub-item .droppable .clonado.correcto{
+    color:#600;
+    background-color: transparent;
+}
+
+.reactivos .lista-preguntas .sub-item .droppable .clonado.incorrecto{
+    color:#600;
+    background-color: transparent;
+}
+
+.respuestas{
+	text-align:center;
+}
+
+.respuestas.col-md-3{ /*RAAR elegante jun 20,18  Para que quede centrado a la derecha cuando respuestas este como columna... jun 28 lo inhabilito, da lata no pone las respuestas abajo, hay que revisar...es buena idea...*/
+  /*  margin: 0; /* de aqui al transform es para centrar horizontalmente,RAAR elegante jun 20,18  elegante */
+ /*   position: fixed;
+    top: 50%;
+    right: 50%;*/
+ /*	 height: 100%; RAAR elegante jun 20,18 lo apago mientas por que si son pocos se amontonan arriba*/
+/*	 transform: translate(200%, -50%);	*/
+}
+
+.respuestas.center{
+	float: none;
+/*	margin: auto;*/
+	
+}
+
+.respuestas.center .lista-respuestas .sub-item{
+	display: inline-block;
+	width:200px;
+	vertical-align:middle;
+}
+.ejercicio:after{
+	clear: both;
+	content: "";
+	display: block;
+}
+
+.revisa {
+    width: 300px;
+    margin: auto;
+}
+
+.revisa button{
+	display: block;
+	width: 150px;
+	margin: 10px auto;
+}
+.revisa:before{
+	content: "";
+	display: block;
+	clear: both;
+}
+.retroalimentacion{
+	text-align:center
+}
+.barraInferior{
+    text-align: center;
+    clear: both;
+}
+.retroBien{
+    color: rgb(0, 131, 0);
+    background-color: rgba(0, 255, 0, 0.1);
+    border: 1px solid rgb(0, 165, 0);
+    padding: 6px;
+    border-radius: 3px;
+	line-height:30px;
+}
+
+.retroMal{
+    color: rgb(131, 0, 0);
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgb(165, 0, 0);
+    padding: 6px;
+    border-radius: 3px;
+	margin: 0 2px;
+	line-height:30px;
+}
+
+.retroArroba{
+    color: rgb(131, 0, 0);
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgb(165, 0, 0);
+    padding: 6px;
+    border-radius: 3px;
+	margin: 0 2px;
+	line-height:30px;
+}
+.mostrarRetro{
+    display:inline-block;
+}
+
+.ocultarRetro{
+    display:none;
+}
+
+.headings { /*nm*/
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2em;
+    text-align: left;
+    color: #000;
+}
+p {
+    font-family: 'Open Sans', sans-serif;
+font-size: 1.5em;
+    line-height: 1.8em;
+    font-weight: 300;
+    letter-spacing: .7px;
+    text-align: justify;
+}
+.actividad {
+    max-width: 250px;
+    background: #b1b1b1;
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+    color: #fff!important;
+    margin-bottom: 15px !important;
+}
+.headings-int {
+    font-family: 'Open Sans', sans-serif;
+    color: #6c6b82;
+    letter-spacing: 1px;
+   
+    margin-top: 0;
+}
+.under-li {
+    border-bottom: solid #dbdbdb;
+    border-width: 3px;
+    padding-bottom: 9px;
+    width: 80%;
+}
+.alto{
+    margin-bottom: 8px;
+}
+.desp{
+    display: none;
+}
+.palomita, .tache{
+	margin-left:10px
+}
+
+.icono{
+  font-size: 6em;
+  float: right;
+  color: #b1b1b1;
+}
+
+
+@media (min-width:900px){
+  .icono {
+    display: none;
+}
+}
+
+@media only screen and (max-width:992px){ /*mientrs mínimo */  
+  
+     .respuestas .lista-respuestas {
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+        display: flex;   
+        flex-wrap: wrap;
+    }
+
+
+    .sub-item{
+        width: 25%;
+    }
+    
+}
+
+
+@media only screen and (max-width:792px){ /*mientrs mínimo */  
+  
+   
+
+
+   .sub-item{
+       width: 40%;
+   }
+   
+}
+
+
+
+@media only screen and (max-width:660px){ /*mientrs mínimo */  
+  
+    .respuestas .lista-respuestas {
+    
+    
+    }
+
+    .numeralsi{
+        
+        margin-top:15px;
+        font-size: 27px;
+    }
+
+    .botonplpa{
+        font-size: 8px;
+    margin-right: 11px;
+    margin-top:8px;
+    }
+
+    .respuestas .lista-respuestas .sub-item {
+        margin-bottom:70px;
+    }
+  
+    .controlitos{
+        height: 80px;
+    }
+    .controlitosaud{
+        flex-direction: row;
+        display: flex;
+        flex-wrap: wrap;
+justify-content: center;
+        height: 110px;
+        margin-bottom: -40px;
+
+    }
+    .botonplpaaud{
+        font-size: 11px;
+    margin-right: 11px;
+    margin-top:8px;
+    }
+    .sub-item {
+        width: 70%;
+        margin-bottom: 40px;
+ 
+    }
+    .barraInferior{
+        margin-top:20px; 
+    }
+
+ }
+
+
+@media only screen and (max-width: 480px) {
+	body{
+		font-family: Gotham,"Helvetica Neue",Helvetica,Arial,sans-serif;	
+		color: #777;
+
+    
+	}
+	.respuestas .lista-respuestas .sub-item .draggable {
+		max-width: 200px;
+	}
+}
+
+
+.tooltip.primary .tooltip-inner          { background-color:    #337ab7; width: 150px; }
+.tooltip.primary.top > .tooltip-arrow    { border-top-color:    #337ab7; }
+.tooltip.primary.right > .tooltip-arrow  { border-right-color:  #337ab7; }
+.tooltip.primary.bottom > .tooltip-arrow { border-bottom-color: #337ab7; }
+.tooltip.primary.left > .tooltip-arrow   { border-left-color:   #337ab7; }
+
+.tooltip.info .tooltip-inner          { background-color:    #31b0d5;  width: 150px;}
+.tooltip.info.top > .tooltip-arrow    { border-top-color:    #31b0d5; }
+.tooltip.info.right > .tooltip-arrow  { border-right-color:  #31b0d5; }
+.tooltip.info.bottom > .tooltip-arrow { border-bottom-color: #31b0d5; }
+.tooltip.info.left > .tooltip-arrow   { border-left-color:   #31b0d5; }
+
+.tooltip.success .tooltip-inner          { background-color:    #449d44; width: 150px;}
+.tooltip.success.top > .tooltip-arrow    { border-top-color:    #449d44; }
+.tooltip.success.right > .tooltip-arrow  { border-right-color:  #449d44; }
+.tooltip.success.bottom > .tooltip-arrow { border-bottom-color: #449d44; }
+.tooltip.success.left > .tooltip-arrow   { border-left-color:   #449d44; }
+
+.tooltip.warning .tooltip-inner          { background-color:    #ec971f; }
+.tooltip.warning.top > .tooltip-arrow    { border-top-color:    #ec971f; }
+.tooltip.warning.right > .tooltip-arrow  { border-right-color:  #ec971f; }
+.tooltip.warning.bottom > .tooltip-arrow { border-bottom-color: #ec971f; }
+.tooltip.warning.left > .tooltip-arrow   { border-left-color:   #ec971f; }
+
+.tooltip.danger .tooltip-inner          { background-color:    #d9534f;width: 150px; }
+.tooltip.danger.top > .tooltip-arrow    { border-top-color:    #d9534f; }
+.tooltip.danger.right > .tooltip-arrow  { border-right-color:  #d9534f; }
+.tooltip.danger.bottom > .tooltip-arrow { border-bottom-color: #d9534f; }
+.tooltip.danger.left > .tooltip-arrow   { border-left-color:   #d9534f; }
+
+
