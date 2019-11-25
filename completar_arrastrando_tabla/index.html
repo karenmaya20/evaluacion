@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+	<title>Completar Arrastrando Tabla V2.7</title>
+<!--
+	*v2.7: RAAR Sep 3,18: multiples respuestas por casilla
+	*v2.6: RAAR May 21,18: Se genera esta escision de 'completar arrastrando' para el manejo de arrastrables en tabla
+	*v2.8: RAAR Marz 25,29: se agrega la opcion del doble click para rellenar las casillas
+-->
+<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Completar Arrastrando"  />
+    <meta name="keywords" content="UNAM, CUAED"  />
+    <meta name="author" content="UNAM CUAED" />
+    <meta name="news_keywords" content="UNAM, CUAED" />
+    <meta name="generator" content="UNAM CUAED" />
+    <meta property="og:site_name" content="Completar Arrastrando" />
+    <meta itemprop="name" content="UNAM, CUAED" />
+    <meta itemprop="image" content="" />
+    <meta itemprop="description" content="Completar Arrastrando" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="activity" />
+    <meta property="og:description" content="Completar Arrastrando" />
+    <meta property="og:image" content="" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    
+	<script type="text/javascript" src="./SCORM/conectividadSCORM.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+ 
+  <script>
+		var jq321 = jQuery.noConflict();
+		var crm=40; //bandera 0/1 para prender la impresión de la longitud del texto.....
+	</script>
+
+<script type="text/javascript" src="js/jqueryui-v1.10.4.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" />
+<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+	
+	<script type="text/javascript" src="js/reactivos.js"></script>
+	<script type="text/javascript" src="js/listaReactivos.js"></script>
+	<script type="text/javascript" src="js/configRecurso.js"></script>
+    <script type="text/javascript" src="js/completaArrastrando.js"></script>
+
+
+
+	<link href="css/font.css" rel="stylesheet" />
+    <script src="js/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css" />
+<script>
+	jq321(document).ready(function(){ 
+		jq321('[data-toggle="tooltip"]').each(function () { //JLBG para activar los tooltips, el title de retro...
+			var options = {
+				html: true };		
+			if (jq321(this)[0].hasAttribute('data-type')) {
+				options['template'] =
+				'<div class="tooltip ' + jq321(this).attr('data-type') + '" role="tooltip">' +
+				'	<div class="tooltip-arrow"></div>' +
+				'	<div class="tooltip-inner"></div>' +
+				'</div>';
+			}
+			jq321(this).tooltip(options);
+		});
+	});
+</script>	
+
+
+</head>
+
+
+<body>
+	<noscript><br/>Necesitas tener habilitado Javascript para <br/>poder hacer uso de la funcionalidad completa</noscript>
+    <section class="container arrastrando">
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 ">
+				<div class="info ocultar">				
+					<i class="fas fa-info tamico "></i>
+				</div>
+				<h2 class="headings-int ">Título de la evaluación</h2>
+			
+				<div id="textoInstrucciones" >
+					<div>
+						<p>Instrucciones (pedagógica y técnica) de la evaluación</p>
+					</div>
+				</div>
+				<br/>
+			</div>
+
+
+
+			<div class="ejercicio-arrastrar col-md-12 col-lg-12 col-sm-12 ">
+				<div class="reactivos" id="reactivo">
+					<div class="lista-preguntas">
+					</div>
+				</div>
+				<div class="respuestas" id="respuesta">
+					<div class="lista-respuestas">
+					</div>
+				</div>
+				<div class="pager col-md-12 col-lg-12 col-sm-12 col-xs-12">
+					<div class="barraInferior">
+						<button id="btnRevisar" class="btn btn-primary botongeneral" onClick="revisar()">Revisar</button>
+						<button id="btnReiniciar" class="btn btn-primary botongeneral" onClick="reiniciar()">Próximo intento</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+</body>
+</html>
